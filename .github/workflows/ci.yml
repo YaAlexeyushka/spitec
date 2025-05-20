@@ -36,6 +36,7 @@ jobs:
         with:
           python-version: "3.12"
 
+          
       - name: Install system dependencies for h5py
         run: |
           sudo apt-get update
@@ -46,6 +47,10 @@ jobs:
           curl -sSL https://install.python-poetry.org | python3 -
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
+      - name: Configure Poetry to use Python 3.12
+        run: |
+          poetry env use python3.12
+          
       - name: Install project dependencies via Poetry
         run: poetry install --all-extras
 
@@ -62,10 +67,15 @@ jobs:
         with:
           python-version: "3.12"
 
+          
       - name: Install Poetry
         run: |
           curl -sSL https://install.python-poetry.org | python3 -
           echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Configure Poetry to use Python 3.12
+        run: |
+          poetry env use python3.12
 
       - name: Install project dependencies via Poetry
         run: poetry install --all-extras

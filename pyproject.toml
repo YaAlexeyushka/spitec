@@ -16,6 +16,7 @@ pathlib = "^1.0.1"
 pandas = "^2.2.3"
 uuid = "^1.30"
 flask = "^3.0.3"
+waitress = "^2.1.2"
 
 
 [tool.poetry.group.dev.dependencies]
